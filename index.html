@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- Подключаем внешний файл стилей -->
+  <link rel='stylesheet' href="css\style.css">
+</head>
+
+<body>
+<!-- Заголовок страницы -->
+<h1>Диаграмма Ганта</h1>
+<!-- Контейнер для диаграммы Ганта -->
+<div class = "gantt">
+  span class="tasks_list"></span>
+  <!-- Место для списка месяцев -->
+  <div class="m_list"></div>
+
+  <!-- Месяцы, которые будут отображаться в диаграмме Ганта -->
+  <span class="month" style="--grid_col:3/5"></span>
+  <span class="month" style="--grid_col:5/7"></span>
+  <span class="month" style="--grid_col:7/9"></span>
+  <span class="month" style="--grid_col:9/11"></span>
+  <span class="month" style="--grid_col:11/13"></span>
+  <span class="month" style="--grid_col:13/15"></span>
+  <span class="month" style="--grid_col:15/17"></span>
+  <span class="month" style="--grid_col:17/19"></span>
+  <span class="month" style="--grid_col:19/21"></span>
+  <span class="month" style="--grid_col:21/23"></span>
+  <span class="month" style="--grid_col:23/25"></span>
+  <span id="last_month" class="month" style="--grid_col:25/27"></span>
+
+
+  <!-- Месяцы с текстовыми подписями -->
+  <h3 class="month" style="--grid_col:3/5">Январь</h3>
+  <h3 class="month" style="--grid_col:5/7">Февраль</h3>
+  <h3 class="month" style="--grid_col:7/9">Март</h3>
+  <h3 class="month" style="--grid_col:9/11">Апрель</h3>
+  <h3 class="month" style="--grid_col:11/13">Май</h3>
+  <h3 class="month" style="--grid_col:13/15">Июнь</h3>
+  <h3 class="month" style="--grid_col:15/17">Июль</h3>
+  <h3 class="month" style="--grid_col:17/19">Август</h3>
+  <h3 class="month" style="--grid_col:19/21">Сентябрь</h3>
+  <h3 class="month" style="--grid_col:21/23">Октябрь</h3>
+  <h3 class="month" style="--grid_col:23/25">Ноябрь</h3>
+  <h3 class="month" style="--grid_col:25/27">Декабрь</h3>
+
+
+  <!-- Пример задачи "Учить Python" с временным интервалом -->
+  <div class="task" style="--row_start:2">
+    <div class="htask">Учить Python</div>
+    <!-- Линия задачи, расположение по колонкам и строкам с определённым цветом -->
+    <div class="tline" style="--grid_row:1/2; --grid_col:4/10; --color:aquamarine"></div>
+  </div>
+
+  <!-- Задача "Создание сайта" с подзадачами -->
+  <div class="task" style="--row_start:3">
+  <div class="htask">Создание сайта</div>
+    <!-- Основная линия задачи -->
+    <div class="tline" style="--grid_row:1/4; --grid_col:5/16; --color:#B5E6FF"></div>
+    <!-- Подзадача "HTML и CSS" -->
+    <div class="stask" style="--row_start:2">
+    <div class="hstask" style="--grid-row:2/3">HTML и CSS</div>
+      <!-- Линия подзадачи -->
+      <div class="tline" style="--grid_row:2/3; --grid_col:5/10; --color:#7D81FF"></div>
+  </div>
+  <div class="stask" style="--row_start:3">
+    <div class="hstask" style="--grid-row:3/4">JavaScript</div>
+    <div class="tline" style="--grid_row:3/4; --grid_col:8/16; --color:#4DBEFF"></div>
+  </div>
+</div>
+
+<div class="task" style="--row_start:4">
+  <div class="htask">Работа с API</div>
+  <div class="tline" style="--grid_row:1/2; --grid_col:7/14; --color:#FFF238"></div>
+</div>
+
+<div class="task" style="--row_start:5">
+  <div class="htask">Учить алгоритмы</div>
+  <div class="tline" style="--grid_row:1/5; --grid_col:10/20; --color:#C6FFB8"></div>
+  <div class="stask" style="--row_start:2">
+    <div class=hstask style="--grid_row:2/3">НЕ понимать</div>
+    <div class="tline" style="--grid_row:2/3; --grid_col:10/13; --color:#69FB93"></div>
+  </div>
+  <div class="stask" style="--row_start:3">
+    <div class="hstask" style="--grid_row:3/4">Писать функции</div>
+    <div class="tline" style="--grid_row:3/4; --grid_col:12/17; --color:#009400"></div>
+  </div>
+  <div class="stask" style="--row_start:4">
+    <div class="hstask" style="--grid_row:4/5">Страдать</div>
+    <div class="tline" style="--grid_row:4/5; --grid_col:14/20; --color:#8fd400"></div>
+  </div>
+</div>
+
+<div class="task" style="--row_start:6">
+  <div class="htask">Работа с Git</div>
+  <div class="tline" style="--grid_row:1/2; --grid_col:18/24; --color:#F05453"></div>
+</div>
+
+<div class="task" style="--row_start:7">
+  <div class="htask">Базы данных</div>
+  <div class="tline" style="--grid_row:1/11; --grid_col:20/26; --color:#FFB8B8"></div>
+  <div class="stask" style="--row_start:8">
+    <div class="hstask" style="--grid_row:1/2">Работать с SQL</div>
+    <div class="tline" style="--grid_row:2/3; --grid_col:23/26; --color:#FF69AD"></div>
+  </div>
+</div>
+</div>
+</body>
